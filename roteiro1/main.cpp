@@ -8,7 +8,7 @@ int main() {
   servicoQuarto.verificarQuarto();
 
   auto servicoReserva = Roteiro::ServicoReservaImpl(connection);
-  servicoReserva.criaReserva();
+  servicoReserva.criarReserva();
 
   auto relatorioReserva = Roteiro::RelatorioReservaImpl(connection);
   relatorioReserva.gerarRelatorio();

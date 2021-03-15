@@ -34,7 +34,7 @@ public:
     _connection.connect();
   }
 
-  void criaReserva() {
+  void criarReserva() {
     std::cout << "Lógica de negócio para Reserva do Quarto" << '\n';
   }
 };

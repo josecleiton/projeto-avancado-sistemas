@@ -12,7 +12,7 @@ public:
 
 class ServicoReserva {
 public:
-  virtual void criaReserva() = 0;
+  virtual void criarReserva() = 0;
 };
 
 class RelatorioReserva {
