@@ -1,5 +1,6 @@
 namespace Roteiro {
-class DatabaseConnection {
+
+class Connection {
 public:
   virtual void connect() = 0;
 };
@@ -18,4 +19,5 @@ class RelatorioReserva {
 public:
   virtual void gerarRelatorio() = 0;
 };
+
 } // namespace Roteiro

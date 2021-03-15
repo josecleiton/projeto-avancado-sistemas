@@ -2,16 +2,22 @@
 #include <iostream>
 
 namespace Roteiro {
-class MysqlConnection : public DatabaseConnection {
+
+class MysqlConnection : public Connection {
 public:
   void connect() { std::cout << "Conectado ao banco MySQL" << '\n'; }
 };
 
+class OracleConnection : public Connection {
+public:
+  void connect() { std::cout << "Conectado ao banco Oracle" << '\n'; }
+};
+
 class ServicoQuartoImpl : public ServicoQuarto {
-  DatabaseConnection &_connection;
+  Connection &_connection;
 
 public:
-  ServicoQuartoImpl(DatabaseConnection &connection) : _connection(connection) {
+  ServicoQuartoImpl(Connection &connection) : _connection(connection) {
     _connection.connect();
   }
 
@@ -21,10 +27,10 @@ public:
 };
 
 class ServicoReservaImpl : public ServicoReserva {
-  DatabaseConnection &_connection;
+  Connection &_connection;
 
 public:
-  ServicoReservaImpl(DatabaseConnection &connection) : _connection(connection) {
+  ServicoReservaImpl(Connection &connection) : _connection(connection) {
     _connection.connect();
   }
 
@@ -34,11 +40,10 @@ public:
 };
 
 class RelatorioReservaImpl : public RelatorioReserva {
-  DatabaseConnection &_connection;
+  Connection &_connection;
 
 public:
-  RelatorioReservaImpl(DatabaseConnection &connection)
-      : _connection(connection) {
+  RelatorioReservaImpl(Connection &connection) : _connection(connection) {
     _connection.connect();
   }
 
